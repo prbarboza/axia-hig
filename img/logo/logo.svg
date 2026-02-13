@@ -1,0 +1,35 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Escudo -->
+  <path d="M96 64 L416 64 L448 112 V288 C448 352 352 416 256 448 C160 416 64 352 64 288 V112 Z" stroke="#C79A3A" stroke-width="18" stroke-linejoin="round"></path>
+
+  <!-- Sofá -->
+  <path d="M160 260
+       C160 235 185 220 210 220
+       H302
+       C327 220 352 235 352 260
+       V300
+       H160
+       Z" stroke="#C79A3A" stroke-width="16" stroke-linejoin="round"></path>
+
+  <path d="M140 260 C120 260 112 280 112 300
+       V320
+       H160
+       V260 Z" stroke="#C79A3A" stroke-width="16" stroke-linejoin="round"></path>
+
+  <path d="M372 260 C392 260 400 280 400 300
+       V320
+       H352
+       V260 Z" stroke="#C79A3A" stroke-width="16" stroke-linejoin="round"></path>
+
+  <!-- Assento -->
+  <line x1="256" y1="240" x2="256" y2="300" stroke="#C79A3A" stroke-width="14"></line>
+
+  <!-- Folha -->
+  <path d="M256 150
+       C240 130 210 120 210 160
+       C210 200 256 210 256 240
+       C256 210 302 200 302 160
+       C302 120 272 130 256 150 Z" stroke="#C79A3A" stroke-width="14" stroke-linejoin="round"></path>
+
+  <line x1="256" y1="150" x2="256" y2="220" stroke="#C79A3A" stroke-width="12"></line>
+</svg>
