@@ -869,14 +869,21 @@ body { overflow-x: hidden; }
     display: flex;
     flex-direction: column;
     width: 100%; /* Garante que o card preencha sua fração do grid */
+    height: auto;
 }
 
-.axia-card-img { height: 200px; width: 100%; }
-.axia-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.axia-card-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
 
-.axia-card-info { padding: 20px; text-align: center; flex-grow: 1; }
-.axia-card-info h5 { color: #0E2E50; font-weight: 700; margin-bottom: 10px; }
-.axia-card-info p { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
+.axia-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 .btn-axia {
     background: #00B98E;
@@ -887,6 +894,31 @@ body { overflow-x: hidden; }
     text-decoration: none;
     display: inline-block;
 }
+
+.axia-card-info {
+  padding: 20px;
+  text-align: center;
+
+  /* 🔥 ESSENCIAL */
+  flex-grow: 1;
+  height: auto;
+  overflow: visible;
+}
+
+.axia-card-info h5 {
+  color: #0E2E50;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.axia-card-info p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6; /* melhora leitura e evita “sensação” de corte */
+  margin-bottom: 20px;
+}
+
+
 
 /* RESOLUÇÃO PARA MOBILE (Carrossel Premium) */
 @media (max-width: 991px) {
@@ -1090,4 +1122,64 @@ body { overflow-x: hidden; }
 /* Garante que o carrossel mostre as aspas flutuantes */
 .testimonial-carousel {
     padding-top: 25px !important;
+}
+
+.axia-brand {
+    font-family: 'Cinzel', serif !important;
+    color: #1b3d2f !important;
+    font-weight: 700;
+    font-size: 18px;   /* ajuste livre */
+    letter-spacing: 0.08em;
+}
+
+.navbar {
+  padding: 18px 0;
+  background: #000;
+}
+
+.navbar-brand span {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.2em;
+  font-size: 35px;
+  color: #1b3d2f !important;
+  font-weight: 800;
+}
+
+.card-premium {
+  background: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 32px 24px;
+  transition: all .35s ease;
+}
+
+.card-premium:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.12);
+}
+
+.cards-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px 16px;
+}
+
+.cards-scroll .card-premium {
+  min-width: 85%;
+  scroll-snap-align: center;
+}
+
+/* Remove setas apenas do carrossel de depoimentos */
+.testimonial-carousel .owl-nav,
+.testimonial-carousel .owl-dots {
+  display: none !important;
+}
+
+@media (max-width: 576px) {
+  .testimonial-carousel {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
