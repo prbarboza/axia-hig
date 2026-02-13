@@ -110,6 +110,33 @@
         $("#premium-carousel").removeClass('owl-carousel');
     }
 });
+
+// Fecha o menu mobile ao clicar fora
+document.addEventListener('click', function (event) {
+  const collapse = document.getElementById('navbarCollapse');
+  const toggler = document.querySelector('.navbar-toggler');
+
+  if (!collapse || !toggler) return;
+
+  const clicouNoMenu = collapse.contains(event.target);
+  const clicouNoBotao = toggler.contains(event.target);
+  const menuAberto = collapse.classList.contains('show');
+
+  if (menuAberto && !clicouNoMenu && !clicouNoBotao) {
+    toggler.click();
+  }
+});
+
+// Fecha o menu mobile ao clicar em um link
+document.querySelectorAll('#navbarCollapse .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const toggler = document.querySelector('.navbar-toggler');
+    if (toggler && toggler.offsetParent !== null) {
+      toggler.click();
+    }
+  });
+});
+
     
 })(jQuery);
 

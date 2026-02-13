@@ -1192,4 +1192,12 @@ body { overflow-x: hidden; }
   }
 }
 
+/* Padroniza descrições de seções (igual ao bloco anterior) */
+.axia-servicos-premium p,
+#servicos p,
+#sobre p {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
