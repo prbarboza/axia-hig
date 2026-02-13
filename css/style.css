@@ -854,41 +854,150 @@ body { overflow-x: hidden; }
     border-radius: 50px; text-decoration: none; display: inline-block; font-weight: 600;
 }
 
-/* Container que mantém o alinhamento do título mas libera o conteúdo lateral */
-.wrapper-premium-fluxo {
-    padding-left: calc((100% - var(--bs-breakpoint-xl, 1140px)) / 2 + 15px);
-    overflow: hidden;
-}
-
-/* Ajuste dinâmico para os breakpoints do Bootstrap */
-@media (min-width: 1400px) {
-    .wrapper-premium-fluxo {
-        padding-left: calc((100% - 1320px) / 2 + 15px);
-    }
-}
-
-@media (max-width: 1199px) {
-    .wrapper-premium-fluxo {
-        padding-left: calc((100% - 960px) / 2 + 15px);
-    }
-}
-
-@media (max-width: 991px) {
-    .wrapper-premium-fluxo {
-        padding-left: 20px; /* No mobile, volta ao respiro padrão */
-    }
-}
-
-/* Garante que a seção de serviços (e as próximas) usem essa regra */
-.axia-wrapper {
-    display: flex;
-    flex-wrap: nowrap;
+/* Container do Trilho */
+.axia-trilho {
+    display: grid;
+    /* Divide o container em 4 colunas IDÊNTICAS no Desktop */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 20px;
-    scrollbar-width: none; /* Esconde barra no Firefox */
+    width: 100%;
 }
 
-.axia-wrapper::-webkit-scrollbar {
-    display: none; /* Esconde barra no Chrome/Safari */
+/* O Card Individual */
+.axia-card {
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Garante que o card preencha sua fração do grid */
+}
+
+.axia-card-img { height: 200px; width: 100%; }
+.axia-card-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.axia-card-info { padding: 20px; text-align: center; flex-grow: 1; }
+.axia-card-info h5 { color: #0E2E50; font-weight: 700; margin-bottom: 10px; }
+.axia-card-info p { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
+
+.btn-axia {
+    background: #00B98E;
+    color: #fff !important;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* RESOLUÇÃO PARA MOBILE (Carrossel Premium) */
+@media (max-width: 991px) {
+    .axia-trilho {
+        display: flex;
+        grid-template-columns: none;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        
+        /* O SEGREDO ESTÁ AQUI: */
+        padding-left: 20px !important;  /* Descola da esquerda */
+        padding-right: 20px !important; /* Descola da direita e mostra o próximo card */
+        padding-bottom: 20px;
+        
+        gap: 20px !important; /* Gap de 50px era muito, 20px é o padrão premium */
+        scrollbar-width: none;
+    }
+
+    .axia-trilho::-webkit-scrollbar {
+        display: none;
+    }
+
+    .axia-card {
+        flex: 0 0 280px; /* Mantém o tamanho do card fixo pra não esmagar */
+    }
+
+    /* Remove a trava do container pai que impede o deslize até a borda */
+    .axia-servicos-premium .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: none !important;
+    }
+}
+
+/* Background da seção inteira */
+.cta-section {
+    background-color: #F8F1E7 !important;
+}
+
+/* O Card: Branco puro sobre o fundo creme cria o efeito premium */
+.axia-benefit-card {
+    background: #ffffff;
+    border-radius: 25px; /* Bordas bem arredondadas como no banner acima */
+    padding: 35px;
+    height: 100%;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.axia-benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(14, 46, 80, 0.1);
+}
+
+/* Wrapper do ícone usando sua cor */
+.benefit-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background-color: #F8F1E7; /* Cor creme no fundo do ícone */
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.benefit-icon-wrapper i {
+    font-size: 24px;
+    color: #00B98E;
+}
+
+.benefit-content h5 {
+    color: #0E2E50;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.benefit-content p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Número discreto no canto */
+.benefit-number {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #0E2E50;
+    opacity: 0.2;
+    letter-spacing: 1px;
+}
+
+/* Mobile: Ajuste de espaçamento */
+@media (max-width: 991px) {
+    .axia-benefit-card {
+        padding: 30px;
+        text-align: center;
+        align-items: center;
+    }
+    .benefit-icon-wrapper {
+        margin: 0 auto 20px auto;
+    }
 }
