@@ -79,56 +79,69 @@
                 </div>
             </div>
         </div>
-        <div class="container-xxl py-5">
+        <style>
+    .axia-wrapper { display: flex; flex-wrap: nowrap; gap: 20px; padding: 20px; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+    .axia-card-new { background: #fff; border-radius: 15px; min-width: 280px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid #eee; overflow: hidden; flex: 0 0 auto; text-align: center; transition: 0.3s; }
+    .axia-img-new { width: 100%; height: 200px; object-fit: cover; }
+    .axia-content-new { padding: 20px; }
+    .axia-content-new h5 { color: #0E2E50; font-weight: 700; margin-bottom: 10px; }
+    .axia-content-new p { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
+    .axia-btn-new { background: #00B98E; color: #fff !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
+
+    /* DESKTOP: Trava 4 colunas e remove o scroll */
+    @media (min-width: 992px) {
+        .axia-wrapper { display: grid; grid-template-columns: repeat(4, 1fr); overflow: visible; }
+        .axia-card-new { min-width: 0; }
+    }
+
+    /* MOBILE: O efeito de "um card e meio" via CSS PURO (Sem erro de JS) */
+    @media (max-width: 991px) {
+        .axia-wrapper { padding-right: 80px; } /* Isso faz o próximo card aparecer no canto */
+    }
+</style>
+
+<div class="container-xxl py-5">
     <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+        <div class="text-center mx-auto mb-5">
             <h1 class="mb-3">Nossos Serviços</h1>
-            <p>Cuidado especializado para cada tipo de estofado na sua residência ou empresa.</p>
+            <p>Cuidado especializado para cada tipo de estofado.</p>
         </div>
-        <div class="row g-4">
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                    <div class="rounded p-4">
-                        <div class="icon mb-3" style="border: none !important; padding: 0 !important;">
-                            <img class="img-fluid rounded-circle" src="img/home/card-sofa.jpg" alt="Limpeza de Sofás" style="width: 80px; height: 80px; object-fit: cover;">
-                        </div>
-                        <h6>Sofás</h6>
-                        <span>Remoção de manchas e odores.</span>
-                    </div>
-                </a>
+
+        <div class="axia-wrapper">
+            <div class="axia-card-new">
+                <img src="img/home/card-sofa-carrossel.jpg" class="axia-img-new">
+                <div class="axia-content-new">
+                    <h5>Sofás</h5>
+                    <p>Remoção de manchas e odores.</p>
+                    <a href="https://wa.me/5511952759444" class="axia-btn-new">Agendar</a>
+                </div>
             </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                    <div class="rounded p-4">
-                        <div class="icon mb-3" style="border: none !important; padding: 0 !important;">
-                            <img class="img-fluid rounded-circle" src="img/home/card-cama.jpg" alt="Limpeza de Colchões" style="width: 80px; height: 80px; object-fit: cover;">
-                        </div>
-                        <h6>Camas e Colchões</h6>
-                        <span>Eliminação profunda de ácaros.</span>
-                    </div>
-                </a>
+
+            <div class="axia-card-new">
+                <img src="img/home/card-cama-carrossel.jpg" class="axia-img-new">
+                <div class="axia-content-new">
+                    <h5>Camas e Colchões</h5>
+                    <p>Eliminação profunda de ácaros.</p>
+                    <a href="https://wa.me/5511952759444" class="axia-btn-new">Agendar</a>
+                </div>
             </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                    <div class="rounded p-4">
-                        <div class="icon mb-3" style="border: none !important; padding: 0 !important;">
-                            <img class="img-fluid rounded-circle" src="img/home/card-poltrona.jpg" alt="Limpeza de Cadeiras" style="width: 80px; height: 80px; object-fit: cover;">
-                        </div>
-                        <h6>Cadeiras e Poltronas</h6>
-                        <span>Revitalização de tecidos.</span>
-                    </div>
-                </a>
+
+            <div class="axia-card-new">
+                <img src="img/home/card-poltrona-carrossel.jpg" class="axia-img-new">
+                <div class="axia-content-new">
+                    <h5>Poltronas</h5>
+                    <p>Revitalização de tecidos.</p>
+                    <a href="https://wa.me/5511952759444" class="axia-btn-new">Agendar</a>
+                </div>
             </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                    <div class="rounded p-4">
-                        <div class="icon mb-3" style="border: none !important; padding: 0 !important;">
-                            <img class="img-fluid rounded-circle" src="img/home/card-impermeabilizacao.jpg" alt="Impermeabilização" style="width: 80px; height: 80px; object-fit: cover;">
-                        </div>
-                        <h6>Impermeabilização</h6>
-                        <span>Proteção contra líquidos.</span>
-                    </div>
-                </a>
+
+            <div class="axia-card-new">
+                <img src="img/home/card-impermeabilizacao-carrossel.jpg" class="axia-img-new">
+                <div class="axia-content-new">
+                    <h5>Impermeabilização</h5>
+                    <p>Proteção contra líquidos.</p>
+                    <a href="https://wa.me/5511952759444" class="axia-btn-new">Agendar</a>
+                </div>
             </div>
         </div>
     </div>
@@ -260,10 +273,12 @@
         <section class="cta-section py-5">
   <div class="container">
     <div class="cta-box">
-      <div class="row g-4 align-items-center">
+      <div class="row g-5 align-items-center cta-row">
+
 
         <div class="col-lg-6">
-          <img src="img/home/cta-pet.jpg" class="img-fluid rounded" alt="">
+          <img src="img/home/cta-pet.jpg" class="img-fluid rounded-4 w-100" alt="AXIA Higienização Premium - Cuidados para Pets">
+
         </div>
 
         <div class="col-lg-6">
@@ -274,14 +289,23 @@
           </p>
 
           <div class="cta-buttons">
-            <a href="https://wa.me/5511952759444" class="btn btn-success">
-              <i class="fab fa-whatsapp me-2"></i> Chamar no WhatsApp
-            </a>
+  <a 
+    href="https://wa.me/5511952759444?text=Olá!%20Gostaria%20de%20agendar%20uma%20higienização.%20Pode%20me%20informar%20a%20disponibilidade%20na%20minha%20região%3F" 
+    class="btn btn-success"
+    target="_blank"
+  >
+    <i class="fab fa-whatsapp me-2"></i> Chamar no WhatsApp
+  </a>
 
-            <a href="tel:+5511952759444" class="btn btn-outline-dark">
-              <i class="fa fa-calendar-alt me-2"></i> Consultar Datas
-            </a>
-          </div>
+  <a 
+    href="https://wa.me/5511952759444?text=Olá!%20Gostaria%20de%20consultar%20datas%20disponíveis%20para%20higienização.%20Pode%20me%20ajudar%3F" 
+    class="btn btn-outline-dark"
+    target="_blank"
+  >
+    <i class="fa fa-calendar-alt me-2"></i> Consultar Datas
+  </a>
+</div>
+
         </div>
 
       </div>
@@ -289,14 +313,15 @@
   </div>
 </section>
 
-
-        <section class="cta-section py-5">
+     <section class="cta-section py-5">
   <div class="container-fluid px-3 px-lg-5">
-    <div class="cta-box cta-wide">
-                    <h1 class="mb-3">Padrão AXIA</h1>
-                    <p>O que torna nossa higienização uma experiência premium.</p>
-                </div>
-                <div class="row g-4">
+    <div class="section-header text-center mb-5">
+  <h2 class="section-title">Padrão AXIA</h2>
+  <p class="section-subtitle">
+    O que torna nossa higienização uma experiência premium.
+  </p>
+</div>
+         <div class="row g-4">
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item rounded overflow-hidden text-center p-4">
                             <div class="icon mb-4" style="width: 80px; height: 80px; margin: auto;">

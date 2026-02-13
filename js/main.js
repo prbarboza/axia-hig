@@ -41,18 +41,31 @@
 
 
     // Header carousel
-    $(".header-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        items: 1,
-        dots: true,
-        loop: true,
-        nav : true,
-        navText : [
-            '<i class="bi bi-chevron-left"></i>',
-            '<i class="bi bi-chevron-right"></i>'
-        ]
-    });
+    $('.header-carousel').owlCarousel({
+    loop: true,
+    items: 1,
+    margin: 0,
+    dots: true,            // 🟢 Habilitado na raiz para o JS rastrear a mudança
+    autoplay: true,
+    autoplayTimeout: 2500, 
+    autoplaySpeed: 600,    
+    smartSpeed: 600,
+    navText: [
+        '<i class="fa fa-chevron-left"></i>',
+        '<i class="fa fa-chevron-right"></i>'
+    ],
+    responsive: {
+        0: {          // MOBILE
+            nav: false,
+            dots: true  // Exibe no mobile
+        },
+        768: {        // DESKTOP
+            nav: true,
+            dots: false // Esconde no desktop (como você configurou)
+        }
+    }
+});
+
 
 
     // Testimonials carousel
@@ -76,6 +89,27 @@
             }
         }
     });
+
+    $(document).ready(function () {
+    console.log("Script carregado!"); // Veja se aparece no console (F12)
+
+    if ($(window).width() < 992) {
+        $("#premium-carousel").owlCarousel({
+            loop: true,
+            margin: 15,
+            dots: true,
+            autoplay: true,
+            stagePadding: 50, // O segredo para ver o próximo card
+            responsive: {
+                0: { items: 1 },
+                768: { items: 2 }
+            }
+        });
+    } else {
+        // Remove as classes do Owl no desktop para manter as 4 colunas do Grid
+        $("#premium-carousel").removeClass('owl-carousel');
+    }
+});
     
 })(jQuery);
 
