@@ -853,3 +853,42 @@ body { overflow-x: hidden; }
     background: #00B98E; color: #fff !important; padding: 10px 25px;
     border-radius: 50px; text-decoration: none; display: inline-block; font-weight: 600;
 }
+
+/* Container que mantém o alinhamento do título mas libera o conteúdo lateral */
+.wrapper-premium-fluxo {
+    padding-left: calc((100% - var(--bs-breakpoint-xl, 1140px)) / 2 + 15px);
+    overflow: hidden;
+}
+
+/* Ajuste dinâmico para os breakpoints do Bootstrap */
+@media (min-width: 1400px) {
+    .wrapper-premium-fluxo {
+        padding-left: calc((100% - 1320px) / 2 + 15px);
+    }
+}
+
+@media (max-width: 1199px) {
+    .wrapper-premium-fluxo {
+        padding-left: calc((100% - 960px) / 2 + 15px);
+    }
+}
+
+@media (max-width: 991px) {
+    .wrapper-premium-fluxo {
+        padding-left: 20px; /* No mobile, volta ao respiro padrão */
+    }
+}
+
+/* Garante que a seção de serviços (e as próximas) usem essa regra */
+.axia-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scrollbar-width: none; /* Esconde barra no Firefox */
+}
+
+.axia-wrapper::-webkit-scrollbar {
+    display: none; /* Esconde barra no Chrome/Safari */
+}
