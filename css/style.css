@@ -1201,3 +1201,70 @@ body { overflow-x: hidden; }
   margin-right: auto;
 }
 
+@media (max-width: 991px) {
+  .cta-section .container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .cta-section .row {
+    --bs-gutter-x: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .cta-section .col-lg-6:last-child {
+    padding: 16px;
+  }
+}
+
+.cta-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .cta-section img {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+
+/* ===== CTA IMAGE FORCE BLEED (MOBILE ONLY) ===== */
+@media (max-width: 991px) {
+
+  /* Remove limites do card */
+  .cta-section .cta-box {
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  /* Mata padding da coluna da imagem */
+  .cta-section .cta-row .col-lg-6:first-child {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Imagem edge-to-edge REAL */
+  .cta-section .cta-row img {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto;
+    display: block;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Texto continua elegante */
+  .cta-section .cta-row .col-lg-6:last-child {
+    padding: 24px 20px !important;
+  }
+}
